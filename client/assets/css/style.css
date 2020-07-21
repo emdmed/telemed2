@@ -32,8 +32,8 @@ Version      : 1.0
 @import url('https://fonts.googleapis.com/css?family=Muli:300,400,500,700,900');
 
 :root{
-    --primary: #0f4557;
-    --secondary: #93a8ac;
+    --primary: #adcaf2;
+    --secondary: #3ca69a;
 }
 
 html {
@@ -639,7 +639,7 @@ img {
     right: 70px;
     height: 80px;
     border-radius: 50%;
-    z-index: 1;
+    z-index: 0;
 }
 
 .img-icon-block i{
@@ -1606,4 +1606,18 @@ PRELOADER
     border-style: solid;
     border-color: rgb(202, 202, 202);
     border-radius: 5px;
+}
+
+.btn-secondary{
+    color: white !important;
+    background-color: var(--secondary) !important;
+    border-color: var(--secondary) !important;
+}
+
+.front-img{
+    z-index: 3 !important;
+}
+
+.text-secondary{
+    color: var(--secondary) !important;
 }

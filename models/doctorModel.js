@@ -11,7 +11,8 @@ var User= mongoose.Schema({
     selector: String,
     matricula: Number,
     attending: Boolean,
-    sessionData: String
+    sessionData: String,
+    cv: Array
 });
 
 var User = module.exports = mongoose.model(config.dbName + "_medico", User);

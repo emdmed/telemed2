@@ -40,7 +40,7 @@
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary main-nav navbar-togglable">
 
                 <a class="navbar-brand d-lg-none d-block" href="">
-                    <h4>Marca</h4>
+                    <img src="./assets/img/siriuslogo.png" height="30px">
                 </a>
                 <!-- Toggler -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,10 +50,10 @@
                 <!-- Collapse -->
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <!-- Links -->
-                    <ul class="navbar-nav ">
+                    <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="index.html">
-                                Inicio
+                                <img src="./assets/img/siriuslogo.png" height="30px">
                             </a>
                         </li>
                         <li class="nav-item ">
@@ -61,11 +61,7 @@
                                 Sobre nosotros
                             </a>
                         </li>
-                        <li class="nav-item ">
-                            <a href="" class="nav-link js-scroll-trigger">
-                                Equipo
-                            </a>
-                        </li>
+
                         <li class="nav-item ">
                             <a data-toggle="modal" data-target="#doctorLoginModal" class="nav-link js-scroll-trigger cursor">
                                 Ingresar como médico
@@ -93,13 +89,17 @@
                 <div class="col-md-12 col-lg-7 text-center text-lg-left mb-4">
                     <div class="main-banner">
                         <!-- Heading -->
-                        <h1 class="display-4 mb-4 font-weight-bold">
-                            Consultas Online
+                        <h3 class="mb-3">
+                            Realice su consulta desde donde esté
+                        </h3>
+
+                        <h1 class="display-4 font-weight-bold text-secondary">
+                            Consultorio Online
                         </h1>
 
                         <!-- Subheading -->
                         <h2 class="display-5 mb-4">
-                           Demo
+                           Clínica médica
                         </h2>
 
                         <!-- Button -->
@@ -114,7 +114,7 @@
 
                 <div class="col-lg-5 d-lg-block">
                     <div class="banner-img-block">
-                        <img src="assets/img/maindoctors.jpg" alt="banner-img" class="img-fluid rounded shadow-sm">
+                        <img src="assets/img/main.png" alt="banner-img" class="img-fluid rounded">
                     </div>
                 </div>
             </div> <!-- / .row -->
@@ -128,46 +128,49 @@
     ================================================== -->
     <section class="section bg-grey" id="feature">
         <div class="container">
-            <div class="row justy-content-center">
+            <div class="row justy-content-center mb-4">
                 <div class="col-lg-3 col-sm-6 col-md-6">
                     <div class="text-center feature-block">
-                        <div class="img-icon-block mb-4">
-                            <i class="ti-thumb-up"></i>
+                        <div class=" mb-4">
+                            <img src="./assets/img/first-aid-kit.png" height="60px">
                         </div>
-                        <h4 class="mb-2">Servicio 1</h4>
-                        <p>Descripción</p>
+                        <h4 class="mb-2">Especialistas</h4>
+                        <p>Somos un grupo en crecimiento de médicos especialistas del Hospital de Clínicas.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 col-md-6">
+                    <div class="text-center feature-block">
+                        <div class="mb-4">
+                            <img src="./assets/img/computer.png" height="60px">
+                        </div>
+                        <h4 class="mb-2">Turnos Online</h4>
+                        <p>Solicite su turno desde la Web, sólo con su email</p>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-sm-6 col-md-6">
                     <div class="text-center feature-block">
                         <div class="img-icon-block mb-4">
-                            <i class="ti-thumb-up"></i>
+                            <img src="./assets/img/planning.png" height="60px">
                         </div>
-                        <h4 class="mb-2">Servicio 2</h4>
-                        <p>Descripción</p>
+                        <h4 class="mb-2">Atención</h4>
+                        <p>Turnos de 20 minutos para solucionar sus consultas de baja complejidad o dudas.</p>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-sm-6 col-md-6">
                     <div class="text-center feature-block">
                         <div class="img-icon-block mb-4">
-                            <i class="ti-thumb-up"></i>
+                            <img src="./assets/img/medal.png" height="60px">
                         </div>
-                        <h4 class="mb-2">Servicio 3</h4>
-                        <p>Descripción</p>
+                        <h4 class="mb-2">Calidad</h4>
+                        <p>Nuestro equipo fue formado y trabaja en los mejores hospitales y sanatorios de Argentina</p>
                     </div>
                 </div>
-
-                <div class="col-lg-3 col-sm-6 col-md-6">
-                    <div class="text-center feature-block">
-                        <div class="img-icon-block mb-4">
-                            <i class="ti-thumb-up"></i>
-                        </div>
-                        <h4 class="mb-2">Servicio 4</h4>
-                        <p>Descripción</p>
-                    </div>
-                </div>
+            </div>
+            <div class="row mx-auto mt-4">
+                <img src="./assets/img/bg1.png" class="mx-auto mt-3 p-3 w-50">
             </div>
         </div> <!-- / .container -->
     </section>
@@ -225,7 +228,7 @@
                 </button>
                 </div>
                 <div class="modal-body text-center mx-auto">
-                    <input type="email" id="patientEmail" placeholder="email@email.com" class="form-control mx-auto">
+                    <input type="email" id="patientEmail" placeholder="email@email.com" class="form-control modernInput mx-auto w-100">
                     <br>
                     <button type="button" class="btn btn-primary" id="createPatientCode">Crear</button>
                 </div>
@@ -245,15 +248,16 @@
                     <div class="footer-widget">
                         <!-- Brand -->
                         <a href="#" class="footer-brand text-white">
-                            Marca
+                            <img src="./assets/img/siriuslogo.png" height="50px">
                         </a>
-                        <p>Texto</p>
+                        <p class="mb-0">Sirius Telemedicina</p>
+                        <p class="mt-0">www.siriustelemed.com</p>
                     </div>
                 </div>
 
                 <div class="col-lg-3 ml-lg-auto col-sm-12">
                     <div class="footer-widget">
-                        <h3>Links extras</h3>
+                        <h3>Info</h3>
                         <!-- Links -->
                         <ul class="footer-links ">
                             <li>
@@ -292,24 +296,18 @@
                         <!-- Links -->
                         <ul class="footer-links ">
                             <li>
-                                <a href="#">
+                                <a href="">
                                     Nosotros
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="">
                                     Precios
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="">
                                     Servicios
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#">
-                                    Contacto
                                 </a>
                             </li>
                         </ul>
@@ -321,16 +319,11 @@
                         <h3>Redes sociales</h3>
                         <!-- Links -->
                         <ul class="list-unstyled footer-links">
-                            <li><a href="#"><i class="fab fa-facebook-f"></i>Facebook</a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i>Instagram</a></li>
                             <li>
-                            <a href="#"><i class="fab fa-twitter"></i>Twitter
-                            </a></li>
-                            <li><a href="#"><i class="fab fa-pinterest-p"></i>Pinterest
-                            </a></li>
                             <li><a href="#"><i class="fab fa-linkedin"></i>linkedin
                             </a></li>
-                            <li><a href="#"><i class="fab fa-youtube"></i>YouTube
-                            </a></li>
+
                         </ul>
                     </div>
                 </div>

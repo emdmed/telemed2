@@ -141,7 +141,7 @@ $("body").on("click", ".seeTurns", function(){
                         $("#turnsHere").append(`
 
                             <div class="btn-group w-100 mb-1" role="group" aria-label="Basic example">
-                                <button class="btn btn-primary w-100 takeTurn" id="${element._id}">${moment(element.turnDate, "DD-MM-YYYY").format("dddd")} ${moment(element.turnDate, "DD-MM-YYYY").format("L")} ${element.hour}:${minutes}</button>
+                                <button class="btn btn-secondary w-100 takeTurn" id="${element._id}">${moment(element.turnDate, "DD-MM-YYYY").format("dddd")} ${moment(element.turnDate, "DD-MM-YYYY").format("L")} ${element.hour}:${minutes}hs</button>
                             </div>
                     
                         `)
@@ -191,6 +191,8 @@ function renderDoctors(){
             let data = res;
 
             data.forEach(element=>{
+                var cvId = element.selector;
+                console.log("element ", element)
                 $("#renderDoctorsHere").append(`
                 
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm- ${element.specialty} filters">
@@ -201,13 +203,23 @@ function renderDoctors(){
                             <div class="p-3">
                                 <h3><a>Dr. ${element.lastname}</a></h3>
                                 <span>${element.specialty}</span>
-                                <button class="mt-2 btn btn-primary seeTurns btn-block" id="${element.selector}">Solicitar turno</button>
+                                <p class="font-italic">MN ${element.matricula}</p>
+                                <hr>
+                                <div id="cv${element.selector}"></div>
+                                <hr>
+                                <button class="mt-2 btn btn-secondary seeTurns btn-block" id="${element.selector}">Solicitar turno</button>
                             </div>
                         </div>
                     </div>
 
                 `)
+
+                element.cv.forEach(element=>{
+                    $("#cv"+ cvId).append(`<p>${element}</p>`)
+                })
             })
+
+      
         }
     })
 }
