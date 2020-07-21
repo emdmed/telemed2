@@ -1,4 +1,4 @@
-//patient test code 8e8f66
+//patient test code 7da56e
 
 moment.lang("es");
 moment.locales("America/Buenos_Aires");
@@ -60,7 +60,8 @@ function checkTakenTurn(patient){
                     //check session
                     $.ajax({
                         url: "/videocall/checkSession",
-                        method: "GET",
+                        method: "POST",
+                        data: {selector: data[0].doctorId},
                         success: function(res){
                             let data = res;
                             console.log(data)

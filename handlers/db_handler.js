@@ -7,6 +7,7 @@ const db_handler = {
     getPatientList,
     findPatient,
     findDoctor,
+    findDoctorBySelector,
     createTurn,
     updateTurn,
     deleteTurn,
@@ -17,7 +18,13 @@ const db_handler = {
     findAllDoctors,
     setActiveTurn,
     deleteTurnByTurn,
+    updateDoctorSession,
     login: loginModule
+}
+
+async function updateDoctorSession(doctor){
+    await DoctorModel.findOneAndUpdate({_id: doctor._id}, doctor , {useFindAndModify: false});
+    console.log("doctor updated")
 }
 
 async function createTurn(turn){
@@ -80,6 +87,11 @@ async function findDoctor(doctor){
     } else {
         return found;
     }
+}
+
+async function findDoctorBySelector(selector){
+    let found = await DoctorModel.find({selector: selector})
+    return found[0];
 }
 
 async function updatePatient(patient){

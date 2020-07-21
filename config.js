@@ -29,7 +29,7 @@ let config = {
             }
         }
     },
-    dbName: "nuestros"
+    dbName: "enrique"
 }
 
 module.exports = config;

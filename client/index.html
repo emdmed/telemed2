@@ -90,11 +90,11 @@
         <!-- Content -->
         <div class="container">
             <div class="row  align-items-center">
-                <div class="col-md-12 col-lg-7 text-center text-lg-left">
+                <div class="col-md-12 col-lg-7 text-center text-lg-left mb-4">
                     <div class="main-banner">
                         <!-- Heading -->
                         <h1 class="display-4 mb-4 font-weight-bold">
-                            Su propio sistema de Telemedicina
+                            Consultas Online
                         </h1>
 
                         <!-- Subheading -->
@@ -105,13 +105,14 @@
                         <!-- Button -->
                         <p class="mb-0">
                             <button class="btn btn-primary btn-circled" data-toggle="modal" data-target="#patientLoginModal">
-                                Ingresar como paciente
+                                Ingresar
                             </button>
+                            <button class="btn btn-secondary btn-circled" data-toggle="modal" data-target="#patientCodeModal">Solicitar código personal</button>
                         </p>
                     </div>
                 </div>
 
-                <div class="col-lg-5 d-none d-lg-block">
+                <div class="col-lg-5 d-lg-block">
                     <div class="banner-img-block">
                         <img src="assets/img/maindoctors.jpg" alt="banner-img" class="img-fluid rounded shadow-sm">
                     </div>
@@ -209,6 +210,24 @@
                     <input type="text" id="doctorLoginCode" placeholder="Ingrese su código personal" class="form-control mx-auto modernInput">
                     <br>
                     <button type="button" class="btn btn-primary" id="doctorLogin">Ingresar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Patient code Modal -->
+    <div class="modal fade" id="patientCodeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body text-center mx-auto">
+                    <input type="email" id="patientEmail" placeholder="email@email.com" class="form-control mx-auto">
+                    <br>
+                    <button type="button" class="btn btn-primary" id="createPatientCode">Crear</button>
                 </div>
             </div>
         </div>

@@ -15,10 +15,11 @@ var sessionId;
 var token;
 let globalSession;
 
-function createSession(){
+function createSession(doctorId){
     $.ajax({
         url: "/videocall/createsession",
-        method: "GET",
+        method: "POST",
+        data: {selector: doctorId},
         success: function(res){
             let data = res;
             console.log("APIKEY ", data.apiKey);
@@ -32,26 +33,9 @@ function createSession(){
     })
 }
 
-$("body").on("click", "#init_endocrino_room", function(){
-    createSession();
-})
-
-$("body").on("click", "#paciente_endocrino", function(){
-    $.ajax({
-        url: "/createtokenendocrino",
-        method: "GET",
-        success: function(res){
-            let data = res;
-            console.log("TOKEN ", data);
-            apiKey = data.apiKey;
-            sessionId = data.sessionId;
-            token = data.token;
-            initializeSession();
-        },
-        error: function(){
-          alert("Error al generar Token");
-        }
-    })
+$("body").on("click", "#init_consultation", function(){
+    let doctor = JSON.parse(localStorage.getItem("doctorActiveTurn"))
+    createSession(doctor.doctorId);
 })
 
 async function initPatientConsultorio(){
@@ -62,12 +46,15 @@ async function initPatientConsultorio(){
   //check for valid turn
   let turn = JSON.parse(localStorage.getItem("validTurn"))
 
+  let turnData = JSON.parse(localStorage.getItem("turn"))
+
   if(status === true && turn === true){
     console.log("Init patient consultorio status is ", status)
     console.log("Creating token...");
     $.ajax({
       url: "/videocall/createtoken",
-      method: "GET",
+      method: "POST",
+      data: turnData,
       success: function(res){
           let data = res;
           apiKey = data.apiKey;
@@ -123,9 +110,12 @@ function initializeSession() {
 
     session.on("streamDestroyed", function(event) {
 
+    let turndata = JSON.parse(localStorage.getItem("doctorActiveTurn"));
+
     $.ajax({
         url: "/videocall/patientDisconnectedSession",
-        method: "GET",
+        method: "POST",
+        data: turndata,
         success: function(res){
             alert("Desconectado");
             if(window.location.href === url + "/patientVideocall.html"){
@@ -146,7 +136,8 @@ $("body").on("click", "#end_call", function(session){
 
   $.ajax({
     url: "/videocall/deleteSession",
-    method: "GET",
+    method: "POST",
+    data: doctorActiveTurn,
     success: function(res){
       console.log(res);
       //delete turn
@@ -180,6 +171,7 @@ async function checkLoggedInPatient(){
         let data = res;
         if(data[0].active === true){
           status = true
+          localStorage.setItem("turn", JSON.stringify(data[0]))
         } else {
           status = false
         } 

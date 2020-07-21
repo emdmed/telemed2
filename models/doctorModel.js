@@ -8,7 +8,11 @@ var User= mongoose.Schema({
     lastname: String,
     name: String,
     specialty: String,
-    selector: String
+    selector: String,
+    matricula: Number,
+    attending: Boolean,
+    sessionData: String,
+    available: Boolean
 });
 
 var User = module.exports = mongoose.model(config.dbName + "_medico", User);

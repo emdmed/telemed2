@@ -32,8 +32,8 @@ Version      : 1.0
 @import url('https://fonts.googleapis.com/css?family=Muli:300,400,500,700,900');
 
 :root{
-    --primary: #c0b9dd;
-    --secondary: #70abaf;
+    --primary: #0f4557;
+    --secondary: #93a8ac;
 }
 
 html {
