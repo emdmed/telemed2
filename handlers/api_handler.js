@@ -6,13 +6,16 @@ const api_handler = {
     createPatient
 }
 
-async function createDoctor(name, lastname, selector, specialty){
+async function createDoctor(name, lastname, selector, specialty, matricula){
     await dbHandler.login.create_doctor({
         creation_date: new Date(),
         lastname: lastname,
         name: name,
         selector: selector,
-        specialty: specialty
+        specialty: specialty,
+        matricula: matricula,
+        attending: false,
+        sessionData: ""
     });
 }
 
