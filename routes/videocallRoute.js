@@ -3,7 +3,6 @@ const router = express.Router();
 const apiHandler = require("../handlers/api_handler");
 const dbHandler = require("../handlers/db_handler");
 const config = require("../config");
-const { db } = require('../models/turnModel');
 const apiKey = "46727622";
 var OpenTok = require('opentok'),
     opentok = new OpenTok(apiKey, "6a01eb366bfe5759ebd5b18033894f50dd01338c");

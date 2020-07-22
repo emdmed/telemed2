@@ -52,8 +52,8 @@
                     <!-- Links -->
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="index.html">
-                                <img src="./assets/img/siriuslogo.png" height="30px">
+                            <a href="index.html" class="nav-link js-scroll-trigger">
+                                Sirius
                             </a>
                         </li>
                         <li class="nav-item ">
@@ -151,7 +151,7 @@
 
                 <div class="col-lg-3 col-sm-6 col-md-6">
                     <div class="text-center feature-block">
-                        <div class="img-icon-block mb-4">
+                        <div class="mb-4">
                             <img src="./assets/img/planning.png" height="60px">
                         </div>
                         <h4 class="mb-2">Atención</h4>
@@ -161,7 +161,7 @@
 
                 <div class="col-lg-3 col-sm-6 col-md-6">
                     <div class="text-center feature-block">
-                        <div class="img-icon-block mb-4">
+                        <div class="mb-4">
                             <img src="./assets/img/medal.png" height="60px">
                         </div>
                         <h4 class="mb-2">Calidad</h4>
@@ -170,7 +170,7 @@
                 </div>
             </div>
             <div class="row mx-auto mt-4">
-                <img src="./assets/img/bg1.png" class="mx-auto mt-3 p-3 w-50">
+                <img src="./assets/img/bg1.png" class="mx-auto mt-3 p-3 w-100">
             </div>
         </div> <!-- / .container -->
     </section>
@@ -223,6 +223,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
+                    <h5>Ingrese su email para recibir su código de ingreso</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -231,6 +232,23 @@
                     <input type="email" id="patientEmail" placeholder="email@email.com" class="form-control modernInput mx-auto w-100">
                     <br>
                     <button type="button" class="btn btn-primary" id="createPatientCode">Crear</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Display code Modal -->
+    <div class="modal fade" id="displayCodeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body text-center mx-auto">
+                    <h1 id="yourCode"></h1>
+                    <h5>Este es su código personal, no lo comparta</h5>
                 </div>
             </div>
         </div>
