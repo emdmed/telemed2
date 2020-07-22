@@ -1,12 +1,12 @@
 Consultation value
-- each doctor chooses own price
+- each doctor chooses own price by mercadopago link
 - fixed price for all consultations
-- no price in platform
+- no payment in platform
 
 TODO
-[] - Specialty filter when searching for doctors
+[x] - Specialty filter when searching for doctors
 [] - doctor review and scoring
-[] - 
+
 
 Patient
-- cancel turn
+[x] - cancel turn

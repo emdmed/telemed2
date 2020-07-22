@@ -110,8 +110,6 @@ function checkTakenTurn(patient){
 
 checkLoggedin();
 
-
-
 $("body").on("click", ".seeTurns", function(){
     let id = $(this).attr("id");
     $("#turnsModal").modal("show")
