@@ -3,6 +3,7 @@ const router = express.Router();
 const apiHandler = require("../handlers/api_handler");
 const dbHandler = require("../handlers/db_handler");
 const config = require("../config");
+const { db } = require('../models/turnModel');
 
 router.post("/findDoctorTurn",  async function(req, res){
    let data = req.body;
@@ -20,6 +21,15 @@ router.post("/deleteTurn",  async function(req, res){
 
    await dbHandler.deleteTurn(data);
    res.status(200).end()
+})
+
+router.post("/cancelTurn", async function(req, res){
+   let data = req.body;
+
+   console.log(data.id)
+
+   await dbHandler.deletePatientFromTurn(data);
+   res.status(200).end();
 })
 
 //Turn was attended and finished by doctor

@@ -12,7 +12,8 @@ var User= mongoose.Schema({
     matricula: Number,
     attending: Boolean,
     sessionData: String,
-    cv: Array
+    cv: Array,
+    paymentLink: String
 });
 
 var User = module.exports = mongoose.model(config.dbName + "_medico", User);

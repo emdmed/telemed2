@@ -3,6 +3,8 @@
 moment.lang("es");
 moment.locales("America/Buenos_Aires");
 
+var dev = true;
+
 function checkLoggedin(){
     var logged = JSON.parse(localStorage.getItem("login"));
     console.log(logged)
@@ -112,6 +114,7 @@ checkLoggedin();
 
 $("body").on("click", ".seeTurns", function(){
     let id = $(this).attr("id");
+    let paymentLink = $(this).attr("name");
     $("#turnsModal").modal("show")
     $.ajax({
         url: "/turns/findDoctorTurn",
@@ -139,7 +142,7 @@ $("body").on("click", ".seeTurns", function(){
                         $("#turnsHere").append(`
 
                             <div class="btn-group w-100 mb-1" role="group" aria-label="Basic example">
-                                <button class="btn btn-secondary w-100 takeTurn" id="${element._id}">${moment(element.turnDate, "DD-MM-YYYY").format("dddd")} ${moment(element.turnDate, "DD-MM-YYYY").format("L")} ${element.hour}:${minutes}hs</button>
+                                <button class="btn btn-secondary w-100 takeTurn" name="${paymentLink}" id="${element._id}">${moment(element.turnDate, "DD-MM-YYYY").format("dddd")} ${moment(element.turnDate, "DD-MM-YYYY").format("L")} ${element.hour}:${minutes}hs</button>
                             </div>
                     
                         `)
@@ -159,6 +162,7 @@ $("body").on("click", ".seeTurns", function(){
 
 $("body").on("click", ".takeTurn", function(){
     let id = $(this).attr("id");
+    let paymentLink = $(this).attr("name");
     let patient = JSON.parse(localStorage.getItem("login"));
     let ask = confirm("El turno tiene un valor de 850 pesos. ¿Desea reservarlo?")
     if(ask === false){
@@ -172,7 +176,12 @@ $("body").on("click", ".takeTurn", function(){
 
         localStorage.setItem("payment", JSON.stringify(payment));
         // go to mercadopago payment
-        window.location = "https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=190030573-b546d29f-d21d-4179-931d-fd066ce5af08"
+        if(dev === false){
+            window.location = paymentLink
+        } else {
+            window.location = "paymentSuccess.html"
+        }
+    
     }
 })
 
@@ -205,7 +214,7 @@ function renderDoctors(){
                                 <hr>
                                 <div id="cv${element.selector}"></div>
                                 <hr>
-                                <button class="mt-2 btn btn-secondary seeTurns btn-block" id="${element.selector}">Solicitar turno</button>
+                                <button class="mt-2 btn btn-secondary seeTurns btn-block" name="${element.paymentLink}" id="${element.selector}">Solicitar turno</button>
                             </div>
                         </div>
                     </div>
@@ -226,7 +235,7 @@ $("body").on("click", ".cancelTurn", function(){
 
     let id = $(this).attr("id");
     $.ajax({
-        url: "/turns/deleteTurn",
+        url: "/turns/cancelTurn",
         method: "POST",
         data: {id: id},
         success: function(res){

@@ -18,8 +18,14 @@ const db_handler = {
     findAllDoctors,
     setActiveTurn,
     deleteTurnByTurn,
+    deletePatientFromTurn,
     updateDoctorSession,
     login: loginModule
+}
+
+async function deletePatientFromTurn(turn){
+    await TurnModel.findByIdAndUpdate(turn.id, {patientId: ""}, {useFindAndModify: false})
+    console.log("turn patient deleted")
 }
 
 async function updateDoctorSession(doctor){
