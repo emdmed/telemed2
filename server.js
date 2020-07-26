@@ -54,6 +54,16 @@ app.get("/getDoctors", async function(req, res){
 
 })
 
+app.post("/changePaymentLink", async function(req, res){
+    let data = req.body;
+
+    console.log(data)
+
+    await db_handler.changeDoctorPaymentLink(data);
+
+    res.status(200).end()
+})
+
 server.listen(process.env.PORT || port);
 console.log("Running on port " + port)
 

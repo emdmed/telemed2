@@ -157,3 +157,23 @@ function newturnhtml(element, minutes){
     <hr>
     `
 }
+
+$("body").on("click", "#setPaymentLink", function(){
+    let doctor = JSON.parse(localStorage.getItem("login"));
+
+    let link = prompt("Ingrese su link de pago");
+
+    $.ajax({
+        url: "/changePaymentLink",
+        method: "POST",
+        data: {id: doctor._id, link: link},
+        success: function(res){
+            console.log(res);
+        },
+        error: function(err){
+            console.log(err);
+        }
+    })
+})
+
+

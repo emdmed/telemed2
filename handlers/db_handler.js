@@ -20,7 +20,12 @@ const db_handler = {
     deleteTurnByTurn,
     deletePatientFromTurn,
     updateDoctorSession,
+    changeDoctorPaymentLink,
     login: loginModule
+}
+
+async function changeDoctorPaymentLink(data){
+    await DoctorModel.findByIdAndUpdate({_id: data.id}, {paymentLink: data.link},{useFindAndModify: false})
 }
 
 async function deletePatientFromTurn(turn){
