@@ -10,5 +10,3 @@ TODO
 
 Patient
 [x] - cancel turn
-
-    "paymentLink": "https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=190030573-b546d29f-d21d-4179-931d-fd066ce5af08",
