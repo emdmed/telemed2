@@ -82,4 +82,5 @@ const msg = {
 sgMail.send(msg);*/
 
 
-apiHandler.createDoctor("Luciana", "Belbey", "lbelbey", "Clínica", "134091")
+apiHandler.createDoctor("Gonzalo", "De Tommaso", "gdetommaso", "Flebología ", "137030")
+
