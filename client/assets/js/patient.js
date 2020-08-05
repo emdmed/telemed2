@@ -3,7 +3,7 @@
 moment.lang("es");
 moment.locales("America/Buenos_Aires");
 
-var dev = true;
+var dev = false;
 
 function checkLoggedin(){
     var logged = JSON.parse(localStorage.getItem("login"));
