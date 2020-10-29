@@ -71,10 +71,10 @@ console.log("Running on port " + port)
 // https://github.com/sendgrid/sendgrid-nodejs
 /*
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey("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");
+sgMail.setApiKey("APIKEYHERE");
 const msg = {
-  to: 'enrique.darderes@gmail.com',
-  from: 'enrique.darderes@gmail.com',
+  to: 'email',
+  from: 'email',
   subject: 'Sending with Twilio SendGrid is Fun',
   text: 'and easy to do anywhere, even with Node.js',
   html: '<strong>and easy to do anywhere, even with Node.js</strong>',
